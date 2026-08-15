@@ -48,8 +48,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap; /* हे महत्त्वाचे आहे */
         }
-
         .logo {
             font-size: 1.6rem;
             font-weight: 700;
@@ -64,7 +64,9 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 1.5rem;
+            gap: 15px;       /* दोन लिंकमधील अंतर */
+            padding: 0;
+            margin-top: 10px;
         }
 
         .nav-links a {
