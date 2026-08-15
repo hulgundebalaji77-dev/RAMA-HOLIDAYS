@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>रामा हॉलिडेज | Rama Holidays</title>
+    <!-- Google Fonts (Marathi support) -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #ff7b00;
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
+            --text-color: #334155;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(13, 110, 253, 0.8), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-inline: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #e06c00;
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--dark-color);
+            margin-bottom: 0.8rem;
+        }
+
+        /* About Section */
+        .about-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .owner-tag {
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-box {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-box i {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-box h3 {
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-box p, .contact-box a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+            color: #94a3b8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">रामा <span>हॉलिडेज</span></a>
+            <ul class="nav-links">
+                <li><a href="#services">सेवा</a></li>
+                <li><a href="#about">आमच्याबद्दल</a></li>
+                <li><a href="#contact">संपर्क</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>रामा हॉलिडेज सोबत करा सुखकर प्रवास</h1>
+            <p>टूर पॅकेजेस, कार व कॅब बुकिंग, विमान व रेल्वे तिकीट आणि हॉटेल बुकिंगसाठी आपले विश्वासू भागीदार.</p>
+            <a href="tel:08484998483" class="btn"><i class="fas fa-phone-alt"></i> बुकिंगसाठी कॉल करा</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="section-title">
+            <h2>आमच्या सेवा</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-map-marked-alt service-icon"></i>
+                <h3>टूर पॅकेजेस</h3>
+                <p>कौटुंबिक सहली, धार्मिक यात्रा आणि ग्रुप टूर्ससाठी देश-विदेशातील सर्वोत्तम टूर पॅकेजेस.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-taxi service-icon"></i>
+                <h3>कार व कॅब भाड्याने</h3>
+                <p>स्थानिक आणि इतर शहरांतील प्रवासासाठी आरामदायक आणि सुरक्षित वाहनांची सोय.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-ticket-alt service-icon"></i>
+                <h3>तिकीट बुकिंग</h3>
+                <p>विमान, रेल्वे आणि लक्झरी बस तिकिटांचे जलद व खात्रीशीर आरक्षण.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-hotel service-icon"></i>
+                <h3>हॉटेल बुकिंग</h3>
+                <p>तुमच्या सोयीनुसार आणि बजेटनुसार स्वच्छ व उत्तम हॉटेल्सचे आरक्षण.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="section-title">
+            <h2>आमच्याबद्दल</h2>
+        </div>
+        <div class="about-card">
+            <p>
+                <strong>रामा हॉलिडेज (Rama Holidays)</strong> मध्ये आम्ही तुमचा प्रत्येक प्रवास सुखकर, सुरक्षित आणि अविस्मरणीय बनवण्यासाठी कटिबद्ध आहोत. धार्मिक स्थळांची यात्रा असो, कौटुंबिक सुट्टी असो किंवा व्यावसायिक प्रवास—आम्ही संपूर्ण प्रवासाचे उत्तम नियोजन करून देतो.
+            </p>
+            <div class="owner-tag">
+                <i class="fas fa-user-tie"></i> प्रोप्रायटर: हुलगुंडे मनोज बापूराव
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="section-title">
+            <h2>संपर्क आणि पत्ता</h2>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-box">
+                <i class="fas fa-phone-volume"></i>
+                <h3>कॉल / व्हॉट्सॲप</h3>
+                <p><a href="tel:08484998483">+91 08484998483</a></p>
+                <div style="margin-top: 10px;">
+                    <a href="https://wa.me/9108484998483" target="_blank" style="color: #25D366; font-weight: bold; text-decoration: none;">
+                        <i class="fab fa-whatsapp"></i> व्हॉट्सॲपवर चॅट करा
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-box">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>कार्यालयाचा पत्ता</h3>
+                <p>स्वस्तिक चेंबर, नगर पालिकेजवळ</p>
+            </div>
+
+            <div class="contact-box">
+                <i class="fas fa-clock"></i>
+                <h3>कार्यालयीन वेळ</h3>
+                <p>सोमवार ते शनिवार: सकाळी ९:३० ते रात्री ८:३०<br>रविवार: अपॉइंटमेंटनुसार सुरू</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 रामा हॉलिडेज (Rama Holidays). सर्व हक्क राखीव. | प्रोप्रायटर: हुलगुंडे मनोज बापूराव</p>
+    </footer>
+
+</body>
+</html>
